@@ -48,8 +48,11 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    min-height: 150px;
+    min-height: 1px;
     width: 500px;
+    z-index: 100;
+    min-height: 165px;
+    align-content: flex-start;
     p {
       display: flex;
       justify-content: center;
@@ -76,5 +79,19 @@ header {
 }
 
 .battle {
-    margin-left: 50%;
+  margin-top: -60px;
+  margin-left: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  .statDisplay {
+    display: flex;
+    justify-content: space-around;
+    .nameDisplay {
+      display: flex;
+    }
+    .scoreDisplay {
+      display: flex;
+    }
+  }
 }

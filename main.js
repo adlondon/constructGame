@@ -29,8 +29,8 @@ var page = {
     usernameInput = $('.usernameInput').val()
     username = new Character({name: usernameInput})
     $('section').removeClass('active');
-    $('.avatarBox').addClass('active');
-    var dialogTmpl = _.template(templates.avatar)
+    $('.difficulty').addClass('active');
+    var dialogTmpl = _.template(templates.difficulty)
     $('.dialogue').html(dialogTmpl(username))
   },
 
@@ -39,10 +39,15 @@ var page = {
     var avatarInput = $(this).attr('src');
     username.avPic(avatarInput);
     page.addPlayerToDom();
+    page.addComputerToDom();
     $('section').removeClass('active');
-    $('.difficulty').addClass('active');
-    var dialogTmpl = _.template(templates.difficulty)
+    $('.battleBox').addClass('active');
+    var dialogTmpl = _.template(templates.fightScene)
     $('.dialogue').html(dialogTmpl())
+    setTimeout(function() {$('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button></p>")}, 5000)
+    $('.battle').animate({
+      marginLeft: 0
+    }, 5000)
   },
 
   difficultySet: function (event) {
@@ -58,15 +63,10 @@ var page = {
       console.log("DIFFICULTY ERROR")
     }
     computer.avPic("shredder.jpg")
-    page.addComputerToDom();
-    var dialogTmpl = _.template(templates.fightScene)
+    var dialogTmpl = _.template(templates.avatar)
     $('.dialogue').html(dialogTmpl())
-    setTimeout(function() {$('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button></p>")}, 5000)
     $('section').removeClass('active');
-    $('.battleBox').addClass('active');
-    $('.battle').animate({
-      marginLeft: 0
-    }, 5000)
+    $('.avatarBox').addClass('active');
   },
 
   addPlayerToDom: function () {
@@ -84,6 +84,9 @@ var page = {
     username.attack(computer)
     if (finished === false) {
     computer.attack(username)
+    if (finished === true) {
+      return
+    }
     }
   }
 }
