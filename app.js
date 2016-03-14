@@ -35,11 +35,25 @@ Character.prototype.damage = function (enemy) {
           marginLeft: 800
         }, 3000)
       } else {
-        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        var dialogueRandom = Math.ceil(Math.random()*3)
+        if (dialogueRandom === 1) {
+          setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        } else if (dialogueRandom === 2) {
+          setTimeout(function () {$('.dialogue').html("<p>Sweet, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        } else if (dialogueRandom === 3) {
+          setTimeout(function () {$('.dialogue').html("<p>Radical, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        }
       }
     } else {
       enemy.health = enemy.health
-      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      var dialogueRandom = Math.ceil(Math.random()*3)
+      if (dialogueRandom === 1) {
+        setTimeout(function() {$('.dialogue').html("<p>Bummer. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      } else if (dialogueRandom === 2) {
+        setTimeout(function() {$('.dialogue').html("<p>Fiddlesticks. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      } else if (dialogueRandom === 3) {
+        setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      }
     }
   } else if(that.avatar.avatar === "donatello.jpg") {
     var random = Math.ceil(Math.random()*12)
@@ -52,12 +66,26 @@ Character.prototype.damage = function (enemy) {
           marginLeft: 800
         }, 3000)
        } else {
-        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
-      }
-    } else {
-      enemy.health = enemy.health
-      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
-    }
+         var dialogueRandom = Math.ceil(Math.random()*3)
+         if (dialogueRandom === 1) {
+           setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+         } else if (dialogueRandom === 2) {
+           setTimeout(function () {$('.dialogue').html("<p>Sweet, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+         } else if (dialogueRandom === 3) {
+           setTimeout(function () {$('.dialogue').html("<p>Radical, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+         }
+       }
+     } else {
+       enemy.health = enemy.health
+       var dialogueRandom = Math.ceil(Math.random()*3)
+       if (dialogueRandom === 1) {
+         setTimeout(function() {$('.dialogue').html("<p>Bummer. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+       } else if (dialogueRandom === 2) {
+         setTimeout(function() {$('.dialogue').html("<p>Fiddlesticks. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+       } else if (dialogueRandom === 3) {
+         setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+       }
+     }
   } else if(that.avatar.avatar === "leonardo.jpg") {
     var random = Math.ceil(Math.random()*12)
     if(random <=9) {
@@ -69,11 +97,25 @@ Character.prototype.damage = function (enemy) {
           marginLeft: 800
         }, 3000)
       } else {
-        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        var dialogueRandom = Math.ceil(Math.random()*3)
+        if (dialogueRandom === 1) {
+          setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        } else if (dialogueRandom === 2) {
+          setTimeout(function () {$('.dialogue').html("<p>Sweet, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        } else if (dialogueRandom === 3) {
+          setTimeout(function () {$('.dialogue').html("<p>Radical, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        }
       }
     } else {
       enemy.health = enemy.health
-      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      var dialogueRandom = Math.ceil(Math.random()*3)
+      if (dialogueRandom === 1) {
+        setTimeout(function() {$('.dialogue').html("<p>Bummer. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      } else if (dialogueRandom === 2) {
+        setTimeout(function() {$('.dialogue').html("<p>Fiddlesticks. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      } else if (dialogueRandom === 3) {
+        setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      }
     }
   } else if(that.avatar.avatar === "raphael.jpg") {
     var random = Math.ceil(Math.random()*12)
@@ -86,11 +128,25 @@ Character.prototype.damage = function (enemy) {
           marginLeft: 800
         }, 3000)
       } else {
-        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        var dialogueRandom = Math.ceil(Math.random()*3)
+        if (dialogueRandom === 1) {
+          setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        } else if (dialogueRandom === 2) {
+          setTimeout(function () {$('.dialogue').html("<p>Sweet, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        } else if (dialogueRandom === 3) {
+          setTimeout(function () {$('.dialogue').html("<p>Radical, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
         }
+      }
     } else {
       enemy.health = enemy.health
-      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      var dialogueRandom = Math.ceil(Math.random()*3)
+      if (dialogueRandom === 1) {
+        setTimeout(function() {$('.dialogue').html("<p>Bummer. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      } else if (dialogueRandom === 2) {
+        setTimeout(function() {$('.dialogue').html("<p>Fiddlesticks. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      } else if (dialogueRandom === 3) {
+        setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
+      }
     }
   } else if (that.avatar.avatar === "shredder.jpg") {
     var random = Math.ceil(Math.random()*2)
@@ -106,12 +162,24 @@ Character.prototype.damage = function (enemy) {
         }, 3000)
         return
       } else {
-        setTimeout(function () {
-          $('.dialogue').append("<p>Oh no, you're hit! You only have " + enemy.health + " points left. Careful friendo. Let's try it again!</p>")}, 2000)
-        setTimeout(function () {
-          $('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button>")}, 3000);
+        var shredderRandom = Math.ceil(Math.random()*3)
+        if (shredderRandom === 1) {
+          setTimeout(function () {
+            $('.dialogue').append("<p>Oh no, you're hit! You only have " + enemy.health + " points left. Careful friendo. Let's try it again!</p>")}, 2000)
+          setTimeout(function () {
+            $('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button>")}, 3000);
+        } else if (shredderRandom === 2) {
+          setTimeout(function () {
+            $('.dialogue').append("<p>Ouch, you're hit! You only have " + enemy.health + " points left. Careful friendo. Let's try it again!</p>")}, 2000)
+          setTimeout(function () {
+            $('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button>")}, 3000);
+        } else if (shredderRandom === 3) {
+          setTimeout(function () {
+            $('.dialogue').append("<p>Yowzers, you're hit! You only have " + enemy.health + " points left. Careful friendo. Let's try it again!</p>")}, 2000)
+          setTimeout(function () {
+            $('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button>")}, 3000);
+        }
       }
-
     } else {
       enemy.health = enemy.health;
       setTimeout(function () {
