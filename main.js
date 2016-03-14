@@ -81,6 +81,7 @@ var page = {
 
   attackComputer: function (event) {
     event.preventDefault();
+    $('.dialogue').html("")
     username.attack(computer)
     if (finished === false) {
     computer.attack(username)

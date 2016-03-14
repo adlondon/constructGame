@@ -29,44 +29,51 @@ Character.prototype.damage = function (enemy) {
     if(random <= 3) {
       enemy.health = enemy.health - 40;
       if(enemy.health < 1) {
-        setTimeout(1000)
-        $('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")
-      }    else {
-        setTimeout(1000)
-        $('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + this.health + " points left.</p>")
+        finished = true;
+        setTimeout(function () {$('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")}, 1000)
+        $('.battle').animate({
+          marginLeft: 800
+        }, 3000)
+      } else {
+        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
       }
     } else {
       enemy.health = enemy.health
-      setTimeout(1000)
-      $('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
     }
   } else if(that.avatar.avatar === "donatello.jpg") {
     var random = Math.ceil(Math.random()*12)
     if(random <= 6) {
       enemy.health = enemy.health - 30;
       if(enemy.health < 1) {
-        setTimeout(1000)
-        $('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")
-      } else {
-        $('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + this.health + " points left.</p>")
+        finished = true;
+        setTimeout(function () {$('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")}, 1000)
+        $('.battle').animate({
+          marginLeft: 800
+        }, 3000)
+       } else {
+        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
       }
     } else {
       enemy.health = enemy.health
-      $('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
     }
   } else if(that.avatar.avatar === "leonardo.jpg") {
     var random = Math.ceil(Math.random()*12)
     if(random <=9) {
       enemy.health = enemy.health - 20;
       if(enemy.health < 1) {
-        setTimeout(1000)
-        $('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")
+        finished = true;
+        setTimeout(function () {$('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")}, 1000)
+        $('.battle').animate({
+          marginLeft: 800
+        }, 3000)
       } else {
-        $('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + this.health + " points left.</p>")
+        setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
       }
     } else {
       enemy.health = enemy.health
-      $('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
     }
   } else if(that.avatar.avatar === "raphael.jpg") {
     var random = Math.ceil(Math.random()*12)
@@ -78,13 +85,12 @@ Character.prototype.damage = function (enemy) {
         $('.battle').animate({
           marginLeft: 800
         }, 3000)
-        return
       } else {
         setTimeout(function () {$('.dialogue').html("<p>Awesome, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
         }
     } else {
       enemy.health = enemy.health
-      $('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+      setTimeout(function() {$('.dialogue').html("<p>Not good. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")}, 1000)
     }
   } else if (that.avatar.avatar === "shredder.jpg") {
     var random = Math.ceil(Math.random()*2)
