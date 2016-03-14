@@ -1,70 +1,117 @@
-console.log("It's time to battle! Your character is either andrew or chelsea, and your weapon is either a boomerang, a potato launcher, or a slingshot. Enter your character name followed by .hasA() and place your weapon of choice inside the parenthesis. For example, if you want to be andrew with a boomerang, you'd type: andrew.hasA('boomerang')'. Each weapon has varying degrees of accuracy, but the less accurate the weapon, the greater the damage. The potato launcher does the most damage, followed by the boomerang and finally the slingshot. Choose your weapons carefully.")
 
 function Character (charOpts) {
   var charOpts = charOpts || {};
-  var that = this
   this.name = charOpts.name;
-  this.health = 50;
-  this.attack = function (enemy) {
-    this.damage(enemy)
-  };
-  this.damage = function (enemy) {
-    if(this.weapon.name === "potato launcher") {
-      var random = Math.ceil(Math.random()*10)
-      if(random < 4) {
-        enemy.health = enemy.health - 30;
-        if(enemy.health < 1) {
-          console.log(enemy.name + " has been eliminated!")
-        }
-        else {
-          console.log("Hit! The potato launcher did 30 points of damage. " + enemy.name + " has " + this.health + " points left.")
-        }
-      }
-      else {
-        enemy.health = enemy.health
-        console.log("Miss! The potato launcher did no additional. " + enemy.name + " has " + enemy.health + " points left.")
-      }
-    }
-    else if(that.weapon.name === "boomerang") {
-      var random = Math.ceil(Math.random()*10)
-      if(random < 7) {
-        enemy.health = enemy.health - 20;
-        if(enemy.health < 1) {
-          console.log(enemy.name + " has been eliminated!")
-        }
-        else {
-          console.log("Hit! The boomerang did 20 points of damage. " + enemy.name + " has " + enemy.health + " points left.")
-        }
-      }
-      else {
-        enemy.health = enemy.health
-        console.log("Miss! The boomerang did no additional. " + enemy.name + " has " + enemy.health + " points left.")
-      }
-    }
-    else if(that.weapon.name === "slingshot") {
-      enemy.health = enemy.health -10;
-      if(enemy.health < 1) {
-        console.log(enemy.name + " has been eliminated!")
-      }
-      else {
-      console.log("Hit! The slingshot did 10 points of damage. " + enemy.name + " has " + enemy.health + " points left.")
-    }
-    }
-    else {
-      console.log("Please choose either a 'potato launcher', a 'boomerang', or a 'slingshot'.")
-    }
-  };
-  this.hasA = function (name) {
-    this.weapon = new Weapon({name: name});
-    console.log("Great! If everyone has chosen their character, it's time to attack. Make sure both andrew and chelsea have weapons. When everyone is armed, enter andrew.attack(chelsea) and chelsea.attack(andrew) to commence battle.");
+  this.health = charOpts.health || 50;
+  this.avatar = charOpts.avatar;
 };
 function Weapon (weapOpts) {
   var weapOpts = weapOpts || {};
-  this.name = weapOpts.name;
+  this.weapon = weapOpts.weapon;
 };
-function Location (locOpts) {
-  var locOpts = locOpts || {};
-  this.location = locOpts.location;
+function Avatar (avOpts) {
+  var avOpts = avOpts || {};
+  this.avatar = avOpts.avatar;
 };
-var andrew = new Character({name: "Andrew"})
-var chelsea = new Character({name: "Chelsea"})
+Character.prototype.avPic = function (avatar) {
+  this.avatar = new Avatar({avatar: avatar})
+};
+Character.prototype.hasA = function (weapon) {
+  this.weapon = new Weapon({weapon: weapon});
+};
+Character.prototype.attack = function (enemy) {
+  this.damage(enemy)
+};
+Character.prototype.damage = function (enemy) {
+  var that = this
+  if(that.avatar.avatar === "michaelangelo.jpg") {
+    var random = Math.ceil(Math.random()*12)
+    if(random <= 3) {
+      enemy.health = enemy.health - 40;
+      if(enemy.health < 1) {
+        setTimeout(1000)
+        $('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")
+      }    else {
+        setTimeout(1000)
+        $('.dialogue').html("<p>Righteous tighteous, you're attack hit it's mark! Shredder only has " + this.health + " points left.</p>")
+      }
+    } else {
+      enemy.health = enemy.health
+      setTimeout(1000)
+      $('.dialogue').html("<p>Totally uncool. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+    }
+  } else if(that.avatar.avatar === "donatello.jpg") {
+    var random = Math.ceil(Math.random()*12)
+    if(random <= 6) {
+      enemy.health = enemy.health - 30;
+      if(enemy.health < 1) {
+        setTimeout(1000)
+        $('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")
+      } else {
+        $('.dialogue').html("<p>Righteous tighteous, you're attack hit it's mark! Shredder only has " + this.health + " points left.</p>")
+      }
+    } else {
+      enemy.health = enemy.health
+      $('.dialogue').html("<p>Totally uncool. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+    }
+  } else if(that.avatar.avatar === "leonardo.jpg") {
+    var random = Math.ceil(Math.random()*12)
+    if(random <=9) {
+      enemy.health = enemy.health - 20;
+      if(enemy.health < 1) {
+        setTimeout(1000)
+        $('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")
+      } else {
+        $('.dialogue').html("<p>Righteous tighteous, you're attack hit it's mark! Shredder only has " + this.health + " points left.</p>")
+      }
+    } else {
+      enemy.health = enemy.health
+      $('.dialogue').html("<p>Totally uncool. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+    }
+  } else if(that.avatar.avatar === "raphael.jpg") {
+    var random = Math.ceil(Math.random()*12)
+    if(random <=12) {
+      enemy.health = enemy.health - 10;
+      if(enemy.health < 1) {
+        finished = true;
+        setTimeout(function () {$('.dialogue').html("<p>Bodacious to the max! Shredder has been eliminated, you win the game! Man I love being a turtle!</p>")}, 1000)
+        $('.battle').animate({
+          marginLeft: 800
+        }, 3000)
+        return
+      } else {
+        setTimeout(function () {$('.dialogue').html("<p>Righteous tighteous, you're attack hit it's mark! Shredder only has " + enemy.health + " points left.</p>")}, 1000);
+        }
+    } else {
+      enemy.health = enemy.health
+      $('.dialogue').html("<p>Totally uncool. Your attack missed. Shredder still has " + enemy.health + " points left.</p>")
+    }
+  } else if (that.avatar.avatar === "shredder.jpg") {
+    var random = Math.ceil(Math.random()*2)
+    console.log(random)
+    if (random === 1) {
+      enemy.health = enemy.health - 20;
+      if(enemy.health < 1) {
+        finished = true;
+        setTimeout(function() {
+            $('.dialogue').prepend("<p>Major-league bummer man! Shredder shredded you like mozzarella on a pizza. Better luck next time. Wait, did someone say pizza?!</p>")}, 1000)
+        $('.battle').html({
+          marginRight: 800
+        }, 3000)
+        return
+      } else {
+        setTimeout(function () {
+          $('.dialogue').append("<p>Oh no, you're hit! You only have" + enemy.health + " points left. Careful friendo. Let's try it again!</p>")}, 2000)
+        setTimeout(function () {
+          $('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button>")}, 3000);
+      }
+
+    } else {
+      enemy.health = enemy.health;
+      setTimeout(function () {
+        $('.dialogue').append("<p>But lucky you, Shredder's attack missed! You still have " + enemy.health + " points left. Let's go again!</p>")}, 2000)
+      setTimeout(function () {
+        $('.dialogue').append("<button class='attackButton' type='submit'>ATTACK!</button>")}, 3000);
+    }
+  }
+};

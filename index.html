@@ -2,9 +2,57 @@
 <html>
  <head>
    <meta charset="utf-8">
+   <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+   <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
    <title></title>
  </head>
  <body>
-   <script src="app.js" charset="utf-8"></script>
+   <header>
+     <div class="dialogue">
+       <div class="logoWrap">
+         <img src="logo.png" alt="" />
+       </div>
+       Cowabunga Dude! It's time to gear up to face the evil Shredder. Type in your name and let's get started!
+     </div>
+   </header>
+   <section class="homeBox active">
+     <form class="usernameInputForm" action="index.html" method="post">
+       <input placeholder="ENTER YOUR NAME" autocomplete="off" class="usernameInput" type="text" name="name" value="">
+     </form>
+   </section>
+
+    <section class="avatarBox">
+      <div class="avatar">
+        <img  id="donatello" src="donatello.jpg" alt="" />
+      </div>
+
+      <div class="avatar">
+        <img id="leonardo" src="leonardo.jpg" alt="" />
+      </div>
+
+      <div class="avatar">
+        <img id="raphael" src="raphael.jpg" alt="" />
+      </div>
+
+      <div class="avatar">
+        <img id="michaelangelo" src="michaelangelo.jpg" alt="" />
+      </div>
+    </section>
+
+    <section class="difficulty">
+      <button class="diffButton" rel="easy" type="button" name="button">EASY</button>
+      <button class="diffButton" rel="normal" type="button" name="button">NORMAL</button>
+      <button class="diffButton" rel="hard" type="button" name="button">HARD</button>
+    </section>
+
+    <section class="battleBox">
+
+    </section>
+
+  <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+  <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+  <script src="templates.js" charset="utf-8"></script>
+  <script src="app.js" charset="utf-8"></script>
+  <script src="main.js" charset="utf-8"></script>
  </body>
 </html>
